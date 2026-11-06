@@ -1,32 +1,28 @@
-README.md
 # PDFcraft – Free PDF Tools by Baris Yurttas
 
-![PDFcraft Banner](https://your-site.com/banner-image.png) <!-- İsteğe bağlı banner -->
+Browser-based PDF tools: merge, split, compress, JPEG → PDF. All processing happens in the browser; files never leave the device.
 
-## 🧩 Overview
-**PDFcraft** is a free, browser-based PDF utility that lets users:
-- 📎 Merge PDFs  
-- ✂️ Split PDFs  
-- 📉 Compress PDFs  
-- 📷 Convert JPG to PDF  
+Live: https://pdfcraft.barisy.org
 
-Built using React + Vite, styled with TailwindCSS, and deployed via Firebase. The app is optimized for daily utility with smooth UI and Google authentication.
+## Stack
+Vite + React + TypeScript, Tailwind CSS, pdf-lib, pdf.js (bundled worker), jsPDF, JSZip, Firebase Auth (Google sign-in).
 
-🔗 Live app: [pdfcraft.web.app](https://pdfcraft.web.app)  
-🌐 Creator website: [barisy.org](https://barisy.org)
+## Develop
+```bash
+npm install
+npm run dev
+```
 
----
+## Build and deploy
+```bash
+npm run build
+firebase deploy --only hosting   # project: pdfcraft-2302a
+```
 
-## 💡 Features
+## Custom domain (pdfcraft.barisy.org)
+1. Firebase Console → Hosting → Add custom domain → `pdfcraft.barisy.org`, add the DNS records it shows.
+2. Firebase Console → Authentication → Settings → Authorized domains → add `pdfcraft.barisy.org`.
 
-- Google Sign-In Auth
-- Daily usage tracking (5 free operations/day)
-- One-time payment option via Stripe for unlimited access
-- Responsive calendar-based UX for tracking PDF actions
-- Firebase Firestore + Auth integration
-- Hosted securely on Firebase Hosting
-
----
-
-## 📁 Project Structure
-
+## Notes
+- Free daily limit: 50 operations (stored in the browser's localStorage).
+- Split downloads all selected pages as one ZIP.
