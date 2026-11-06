@@ -18,7 +18,7 @@ export const Header = () => {
           <div>
             <div className="text-sm font-bold uppercase tracking-widest text-white">PDFcraft</div>
             <a
-              href={`https://www.barisy.org/#/work`}
+              href="https://www.barisy.org/#/"
               className="text-[11px] uppercase tracking-widest text-white/60 hover:text-white"
             >
               ← by barisy.org
